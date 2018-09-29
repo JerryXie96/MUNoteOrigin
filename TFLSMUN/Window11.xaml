@@ -1,0 +1,19 @@
+﻿<Window x:Class="TFLSMUN.Window11"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="让渡" Height="196" Width="432" ResizeMode="NoResize" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="让渡给主席" Height="27" HorizontalAlignment="Left" Margin="31,16,0,0" Name="label1" VerticalAlignment="Top" Width="71" IsEnabled="False" />
+        <Button Content="确定" Height="23" HorizontalAlignment="Left" Margin="312,18,0,0" Name="ok" VerticalAlignment="Top" Width="75" Click="ok_Click" Opacity="0.8" Background="White" BorderBrush="White" />
+        <CheckBox Content="CheckBox" Height="19" HorizontalAlignment="Left" Margin="16,21,0,0" Name="rd1" VerticalAlignment="Top" Width="17" Checked="rd1_Checked" />
+        <CheckBox Content="CheckBox" Height="19" HorizontalAlignment="Left" Margin="16,53,0,0" Name="rd2" VerticalAlignment="Top" Width="17" Checked="rd2_Checked" />
+        <Label Content="让渡给" Height="27" HorizontalAlignment="Left" Margin="31,48,0,0" Name="label2" VerticalAlignment="Top" Width="48" IsEnabled="False" />
+        <TextBox Height="20" HorizontalAlignment="Left" Margin="77,51,0,0" Name="name" VerticalAlignment="Top" Width="88" IsEnabled="False" />
+        <Label Content="代表" Height="27" HorizontalAlignment="Left" Margin="171,48,0,0" Name="label3" VerticalAlignment="Top" Width="48" IsEnabled="False" />
+        <CheckBox Content="CheckBox" Height="19" HorizontalAlignment="Left" Margin="16,85,0,0" Name="rd3" VerticalAlignment="Top" Width="17" Checked="rd3_Checked" />
+        <Label Content="让渡给问题" Height="27" HorizontalAlignment="Left" Margin="31,80,0,0" Name="label4" VerticalAlignment="Top" Width="71" IsEnabled="False" />
+        <Label Content="让渡给评论" Height="27" HorizontalAlignment="Left" Margin="31,109,0,0" Name="label5" VerticalAlignment="Top" Width="71" IsEnabled="False" />
+        <CheckBox Content="CheckBox" Height="19" HorizontalAlignment="Left" Margin="16,114,0,0" Name="rd4" VerticalAlignment="Top" Width="17" Checked="rd4_Checked" />
+        <Button Background="White" BorderBrush="White" Content="取消" Height="23" HorizontalAlignment="Left" Margin="312,53,0,0" Name="cancel" Opacity="0.8" VerticalAlignment="Top" Width="75" Click="cancel_Click" />
+    </Grid>
+</Window>

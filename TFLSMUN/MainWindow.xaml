@@ -1,0 +1,74 @@
+﻿<Window x:Class="TFLSMUN.MainWindow"
+        xmlns:WinFormHost="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+        xmlns:WinFormControls="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="模拟联合国会议记录器 Alpha 6  By：小狼在进军@TFLSMUN、小朵@RAS" Height="596" Width="1048" WindowState="Maximized" Closed="Window_Closed">
+    <Grid>
+        <DockPanel HorizontalAlignment="Left" Name="dockPanel1" VerticalAlignment="Top" >
+            <Viewbox  Name="Viewbox1" Stretch="Fill">
+                <Canvas Height="488" Name="Canvas1" Width="812">
+                    <Label Canvas.Left="16" Canvas.Top="18" Content="主发言名单：" Height="39" Name="label1" Width="115" FontSize="18" Foreground="White" />
+                    <Button Canvas.Left="26" Canvas.Top="447" Content="删除发言" Height="24" Name="deletespeak" Width="63" Click="deletespeak_Click" BorderBrush="#FF34DAEE" Background="White" Opacity="0.8" />
+                    <Button Canvas.Left="103" Canvas.Top="447" Content="保存" Height="24" Name="save" Width="63" Click="save_Click" BorderBrush="#FF34DAEE" Background="White" Opacity="0.8" />
+                    <WindowsFormsHost Canvas.Left="18" Canvas.Top="61" Height="363" Name="wfh1" Width="157" Opacity="0.8">
+                        <WinFormControls:RichTextBox Height="363" Width="157" x:Name="mainspeakinglist" SelectionChanged="mainspeakinglist_SelectionChanged" BackColor="LightSkyBlue" />
+                    </WindowsFormsHost>
+                    <Label Canvas.Left="202" Canvas.Top="19" Content="会议记录：" FontSize="18" Height="37" Name="label2" Width="100" Foreground="White" />
+                    <WindowsFormsHost Canvas.Left="200" Canvas.Top="62" Height="356" Name="windowsFormsHost1" Width="291" Opacity="0.8">
+                        <WinFormControls:RichTextBox Height="354" Width="410" x:Name="log" SizeChanged="log_SizeChanged" BackColor="LightSkyBlue" SelectionChanged="log_SelectionChanged">
+                        </WinFormControls:RichTextBox>
+                    </WindowsFormsHost>
+                    <Button Canvas.Left="505" Canvas.Top="89" Content="有组织" Height="24" Name="mc" Width="59" Click="mc_Click" Background="White" Opacity="0.8" BorderBrush="#FF34DAEE" />
+                    <Button Canvas.Left="505" Canvas.Top="125" Content="无组织" Height="24" Name="umc" Width="59" Click="umc_Click" Background="White" BorderBrush="#FF34DAEE" Opacity="0.8" />
+                    <Button Canvas.Left="505" Canvas.Top="161" Content="更改时间" Height="24" Width="59" Name="changetime" Click="changetime_Click" BorderBrush="#FF34DAEE" Background="White" Opacity="0.8" />
+                    <Label Canvas.Left="505" Canvas.Top="57" Content="动议选项：" Height="28" Name="label3" Width="65" Foreground="White" />
+                    <Button Canvas.Left="505" Canvas.Top="198" Content="DR顺序" Height="24" Name="DRorder" Width="59" Click="DRorder_Click" BorderBrush="#FF34DAEE" Background="White" Opacity="0.8" />
+                    <Button Canvas.Left="505" Canvas.Top="233" Content="暂时休会" Height="24" Name="pausemeeting" Width="59" Click="pausemeeting_Click" BorderBrush="#FF34DAEE" Background="White" Opacity="0.8" />
+                    <Button Canvas.Left="505" Canvas.Top="268" Content="针对辩论" Height="24" Name="freedebate" Width="59" Click="freedebate_Click" BorderBrush="#FF34DAEE" Background="White" Opacity="0.8" />
+                    <Button Canvas.Left="505" Canvas.Top="303" Content="进入投票" Height="24" Name="stopdebate" Width="59" Click="stopdebate_Click" BorderBrush="#FF34DAEE" Background="White" Opacity="0.8" />
+                    <Button Canvas.Left="505" Canvas.Top="339" Content="延期动议" Height="24" Name="yqdy" Width="59" Click="yqdy_Click" BorderBrush="#FF34DAEE" Background="White" Opacity="0.8" />
+                    <Button Canvas.Left="505" Canvas.Top="376" Content="延长动议" Height="24" Name="ycdy" Width="59" Click="ycdy_Click" BorderBrush="#FF34DAEE" Background="White" Opacity="0.8" />
+                    <Button Canvas.Left="505" Canvas.Top="411" Content="结束会议" Height="24" Name="jshy" Width="59" Click="jshy_Click" BorderBrush="#FF34DAEE" Background="White" Opacity="0.8" />
+                    <Button Canvas.Left="222" Canvas.Top="447" Content="通过" Height="24" Name="pass" Width="63" Click="pass_Click" BorderBrush="#FF34DAEE" Background="White" Opacity="0.8" />
+                    <Button Canvas.Left="318" Canvas.Top="447" Content="未通过" Height="24" Name="unpass" Width="63" Click="unpass_Click" BorderBrush="#FF34DAEE" Background="White" Opacity="0.8" />
+                    <Button Canvas.Left="405" Canvas.Top="447" Content="保存记录" Height="24" Name="savelog" Width="63" Click="savelog_Click" BorderBrush="#FF34DAEE" Background="White" Opacity="0.8" />
+                    <Label Canvas.Left="580" Canvas.Top="19" Content="计时器1：" Height="26" Name="label4" Width="60" FontSize="11" Foreground="White" />
+                    <Label Canvas.Left="580" Canvas.Top="45" Content="00:00" Height="49" Name="time1" Width="138" FontSize="28" Foreground="White" />
+                    <Label Canvas.Left="580" Canvas.Top="125" Content="计时器2：" FontSize="11" Height="26" Name="label6" Width="60" BorderBrush="#FF0092FF" Foreground="White" />
+                    <Label Canvas.Left="580" Canvas.Top="153" Content="00:00" FontSize="28" Height="49" Name="time2" Width="142" Foreground="White" />
+                    <Label Canvas.Left="580" Canvas.Top="90" Content="秒数：" FontSize="11" Height="26" Name="label5" Width="43" Foreground="White" />
+                    <TextBox Canvas.Left="619" Canvas.Top="90" Height="20" Name="timelimit1" Width="99" TextChanged="timelimit1_TextChanged" Opacity="0.8" />
+                    <Button Canvas.Left="730" Canvas.Top="32" Content="开始" Height="22" Width="53" Name="timestart1" IsEnabled="False" Click="timestart1_Click" BorderBrush="#FF34DAEE" Background="White" Opacity="0.8" />
+                    <Label Canvas.Left="580" Canvas.Top="202" Content="秒数：" FontSize="11" Height="26" Name="label7" Width="43" Foreground="White" />
+                    <TextBox Canvas.Left="619" Canvas.Top="204" Height="20" Name="timelimit2" Width="99" TextChanged="timelimit2_TextChanged" Opacity="0.8" />
+                    <Button Canvas.Left="730" Canvas.Top="146" Content="开始" Height="22" Name="timestart2" Width="53" IsEnabled="False" Click="timestart2_Click" BorderBrush="#FF34DAEE" Background="White" Opacity="0.8" />
+                    <Button Canvas.Left="730" Canvas.Top="67" Content="暂停" Height="22" Width="53" Name="timepause1" IsEnabled="False" Click="timepause1_Click" BorderBrush="#FF34DAEE" Background="White" Opacity="0.8" />
+                    <Button Canvas.Left="730" Canvas.Top="179" Content="暂停" Height="22" Name="timepause2" Width="53" IsEnabled="False" Click="timepause2_Click" BorderBrush="#FF34DAEE" Background="White" Opacity="0.8" />
+                    <Button Canvas.Left="730" Canvas.Top="100" Content="继续" Height="22" IsEnabled="False" Name="continue1" Width="53" Click="continue_Click" BorderBrush="#FF34DAEE" Background="White" Opacity="0.8" />
+                    <Button Canvas.Left="730" Canvas.Top="209" Content="继续" Height="22" IsEnabled="False" Name="continue2" Width="53" Click="continue2_Click" BorderBrush="#FF34DAEE" Background="White" Opacity="0.8" />
+                    <Label Canvas.Left="580" Canvas.Top="243" Content="人数统计：" FontSize="11" Height="26" Name="label8" Width="60" Foreground="White" />
+                    <Label Canvas.Left="580" Canvas.Top="273" Content="应到：" FontSize="11" Height="26" Name="label9" Width="43" Foreground="White" />
+                    <TextBox Canvas.Left="619" Canvas.Top="275" Height="20" Name="yd" Width="99" TextChanged="yd_TextChanged" Opacity="0.8" />
+                    <Label Canvas.Left="580" Canvas.Top="305" Content="实到：" FontSize="11" Height="26" Name="label10" Width="43" Foreground="White" />
+                    <TextBox Canvas.Left="619" Canvas.Top="308" Height="20" Name="sd" Width="99" TextChanged="sd_TextChanged" Opacity="0.8" />
+                    <Button Canvas.Left="732" Canvas.Top="308" Content="计算" Height="22" IsEnabled="False" Name="count" Width="53" Click="count_Click" BorderBrush="#FF34DAEE" Background="White" Opacity="0.8" />
+                    <Label Canvas.Left="580" Canvas.Top="379" Content="简单多数：" FontSize="11" Height="26" Name="label11" Width="63" />
+                    <TextBox Canvas.Left="661" Canvas.Top="381" Height="20" Name="simpleds" Width="52" IsReadOnly="True" Opacity="0.8" />
+                    <Label Canvas.Left="580" Canvas.Top="407" Content="绝对多数：" FontSize="11" Height="26" Name="label12" Width="63" />
+                    <TextBox Canvas.Left="661" Canvas.Top="409" Height="20" IsReadOnly="True" Name="jdds" Width="52" Opacity="0.8" />
+                    <Label Canvas.Left="580" Canvas.Top="434" Content="20%多数：" FontSize="11" Height="26" Name="label13" Width="63" />
+                    <TextBox Canvas.Left="661" Canvas.Top="436" Height="20" IsReadOnly="True" Name="p20ds" Width="52" Opacity="0.8" />
+                    <Label Canvas.Left="580" Canvas.Top="339" Content="未到：" FontSize="11" Height="26" Name="label14" Width="43" Foreground="White" />
+                    <TextBox Canvas.Left="619" Canvas.Top="342" Height="20" IsReadOnly="True" Name="wd" Width="99" Opacity="0.8" />
+                    <Label Canvas.Left="579" Canvas.Top="457" Content="三分之一多数：" FontSize="11" Height="26" Name="label15" Width="88" />
+                    <TextBox Height="20" IsReadOnly="True" Name="sfzyds" Width="52" Canvas.Left="661" Canvas.Top="459" Opacity="0.8" />
+                    <Button Background="White" BorderBrush="#FF34DAEE" Canvas.Left="504" Canvas.Top="446" Content="让渡" Height="24" Name="rd" Opacity="0.8" Width="59" Click="rd_Click" />
+                    <Canvas.Background>
+                        <ImageBrush ImageSource="background.bmp" />
+                    </Canvas.Background>
+                </Canvas>
+            </Viewbox>
+        </DockPanel>
+    </Grid>
+</Window>
